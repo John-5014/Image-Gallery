@@ -1,0 +1,91 @@
+{% extends 'all-images/base.html'%}
+{% block content %}
+ <div class="buy">
+ <h1 class="text-center">WELCOME TO THE BEST GALLERY</h1>
+ 
+ <div class="container">
+  <div class="row">
+      <!-- Looping through images   -->
+      <div class="col-xs-12 col-sm-3">
+	        <div class="list-group">
+                <span href="" class="list-group-item active">
+                AVAILABLE CATEGORIES
+                </span>
+                <a  class="list-group-item">
+                    Landscape and photography
+                </a>
+                
+                <a href="" class="list-group-item">
+                    
+                </a>
+                <a href="" class="list-group-item">
+                    Motivation
+                </a>
+                <a href="" class="list-group-item">
+                Art
+                </a>
+                <a href="" class="list-group-item">
+                    Wildlife
+                </a>
+                <a class="list-group-item">
+                  Lifestyle
+                </a>
+                <a class="list-group-item">
+                  Music
+                </a>
+            </div><!-- /list-group -->      
+	    </div><!-- /col -->
+      {% for image in image %}
+      
+      <!-- displaying News articles -->
+      <div class="col-md-4">
+        <img class="foto" data-toggle="modal" data-target="#myModal{{image.id}}" src="{{image.image.url}}" class="img-responsive"
+          width="500" height="400" alt="Image" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" >
+  </div>
+      
+      <div class="modal" id="myModal{{image.id}}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <h3 class="text-center">{{image.name}}</h3>
+  
+            
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <img src="{{image.image.url}}" class="img-thumbnail" width="600" alt="Image">
+            </div>
+  
+            <!-- Modal body -->
+            <div class="modal-body">
+              <h4 class="modal-title"><strong>Description:</strong> <em>{{ image.description}}</em></h4>
+              <p><strong>Posted:</strong> {{image.pub_date}}</p>
+              <p><Strong>Location:</Strong>{{ image.location}}</p>
+              <p><strong>Copy link</strong><a href="http://127.0.0.1:8000{{image.image.url}}" > http://127.0.0.1:8000{{image.image.url}}</a></p> <br>
+             
+            </div>
+  
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      {% empty %}
+      <div class="row">
+        <h2 class="text-center">There are no images</h2>
+      </div>
+      {% endfor %}
+      
+  
+    </div>
+  </div>
+</div>
+<style>
+
+
+
+</style>
+
+  
+ {% endblock %}
