@@ -41,11 +41,12 @@ class Image(models.Model):
     gallery = cls.objects.filter(category__name__icontains=category)
     return gallery
 
-  # @classmethod
-  # def filter_by_location(cls, id):
+  @classmethod
+  def filter_by_location(cls,id):
+    album = Image.objects.filter(location_id = id)
 
-  #   gallery = Image.objects.filter(location_id=id)
-  #   return gallery
+    return album
+
 
   def __str__(self):
     return self.name 
