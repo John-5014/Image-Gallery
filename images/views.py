@@ -9,10 +9,6 @@ def index(request):
 
   image = Image.objects.all()
 
-
-
-
-  
   return render(request,'all-images/index.html',{"image":image})
 
 
