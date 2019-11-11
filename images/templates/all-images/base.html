@@ -1,39 +1,52 @@
-{% load bootstrap3 %}
-{% load static%}
+{% load bootstrap3 %} {% load static%}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  {% if title %}
-  <title>Kaiser Gallery -{{title}}</title>
-  {% else %}
-  <title> Kaiser Gallery </title>
-  {% endif %}
+  <head>
+    <meta charset="UTF-8" />
+    {% if title %}
+    <title>Kaiser Gallery -{{ title }}</title>
+    {% else %}
+    <title>Kaiser Gallery</title>
+    {% endif %} {% block styles %} {% bootstrap_css %}
+    <!-- Compiled and minified CSS -->
 
-  {% block styles %}
-  {% bootstrap_css %}
-   <!-- Compiled and minified CSS -->
-  
-   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-  <link rel="stylesheet" href="{% static 'css/baseimages.css' %}">
-  
-  {% endblock %}
-</head>
-<body>
-{% include "navbar.html" %}
-{% block content%}
-
-{% endblock%}
-
-{% block scripts %}
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-     {% bootstrap_javascript %}
+    <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
+    <link rel="stylesheet" href="{% static 'css/baseimages.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
 
     {% endblock %}
-  
-</body>
+  </head>
+  <body class="container-fluid">
+    {% include "navbar.html" %} {% block content%} {% endblock%} 
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    {% bootstrap_javascript %}
+
+    
+
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+
+    
+  </body>
 </html>
