@@ -2,38 +2,34 @@
 {% block content %}
 
 
-<div class="container">
+<div class="container-fluid">
   
     {% if images%}
-    <h2>Found  {{ images|length }} of searched term {{ message }} </h2>
+    <h2 style="font-family:fantasy;font-weight:bold;font-size:30px;color:white;">Found  {{ images|length }} of searched term <em style="color:blue;">{{ message }} </em></h2>
     
     <div class="row">
 
         {% for image in images %}
         <div class="
-        col-md-6">
-        <div class="">
+        col-md-6 ">
+        <div class="jumbotron">
             
             <img class="foto img-rounded" data-toggle="modal" data-target="#myModal{{image.id}}" src="{{image.image.url}}" class="img-responsive"
-               alt="Image" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" width="500" height="300">
+               alt="Image" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" width="400" height="300">
 
                <div class="">
-                <p>
+                <p style="font-family:italic; color: white">
                     {{image.description}}
                 </p>
             </div>
-        </div>
-
-
-        
-        
+        </div> 
     </div>
     
     {% endfor %}
     </div>
     {% else %}
     
-    <h2> Found 0 images for the search term  {{message}}</h2>
+    <h2 class="text-center" style="color:white;"> Found 0 images for the search term  {{message}}</h2>
     {% endif %}
   </div>
   
@@ -43,4 +39,11 @@
 {% endif %}
   </div>
 </div>
+<style>
+.jumbotron{
+height:580px;
+width: 700px;
+background-color: black;
+}
+</style>
 {% endblock %}
