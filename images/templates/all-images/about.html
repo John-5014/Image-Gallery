@@ -1,11 +1,8 @@
 {% extends 'all-images/base.html' %}
 {% block content %}
-
- <h1 class="text-center"> BEST GALLERY</h1>
-
-
-
- <h2 class="text-center">OUR GALLERIA</h2>
+<div class="galleria">
+ <h1 class="text-center" style="color:white;">OUR GALLERIA</h1>
+ <p class="text-center" style="color:white; font-size: 19px; font-weight: bold;">Have a side look at some of the images done by great artists. <br> The list comprises of pictures taken in real time and also those drawn from ancient times; 'the likes of Davinci'</p>
   <div class="container">
     	<div id="carousel">
 			<figure><img src="http://lorempixel.com/186/116/nature/1" alt=""></figure>
@@ -17,9 +14,10 @@
 			<figure><img src="http://lorempixel.com/186/116/nature/7" alt=""></figure>
 			<figure><img src="http://lorempixel.com/186/116/nature/8" alt=""></figure>
 			<figure><img src="http://lorempixel.com/186/116/people/9" alt=""></figure>
+			
 		</div>
   </div>
-  
+</div>
  <style>
  @import url(http://fonts.googleapis.com/css?family=Anaheim);
 
@@ -34,26 +32,20 @@
 *:after{
 	box-sizing: border-box;
 }
-html,
-body{
-	min-height: 100%;
-}
-body{
-	background-image: radial-gradient(mintcream 0%, lightgray 100%);
-}
+
 h1{
 	display: table;
 	margin: 5% auto 0;
 	text-transform: uppercase;
-	font-family: 'Anaheim', sans-serif;
-	font-size: 4em;
-	font-weight: 400;
+	font-family: fantasy;
+	font-size: 6em;
+	font-weight: 300;
 	text-shadow: 0 1px white, 0 2px black;
 }
 .container{
-	margin: 4% auto;
+	margin: 8% auto;
 	width: 210px;
-	height: 140px;
+	height: 340px;
 	position: relative;
 	perspective: 1000px;
 }
@@ -87,6 +79,7 @@ h1{
 #carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
 #carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
 #carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
 
 img{
 	
