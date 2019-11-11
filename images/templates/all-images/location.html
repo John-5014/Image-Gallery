@@ -1,0 +1,28 @@
+{% extends 'all-images/base.html' %}
+
+
+{% block content %}
+
+
+{% for image in images %}
+<div class="row">
+<div class="col-md-4">
+    
+     <img src="{{image.image.url}}" data-toggle="modal" class="img-responsive" width="500" alt="Image" >
+     
+    </div>
+    <div class="col-md-8">
+      
+      <p style="margin-top:15%; color:white;font-size:20px;">{{ image.description}}</p>
+
+      <p style="color:blue; font-size: 18px;"> Category : {{image.category}}</p>
+     <p style="color:blue; font-size: 18px;">Location :{{image.location}}</p>
+    </div>
+ </div>
+ {% empty %}
+ <div class="row">
+   <h2 class="text-center">There are No Images yet</h2>
+ </div>
+ {% endfor %}
+
+{% endblock%}
