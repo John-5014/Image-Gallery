@@ -2,7 +2,8 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns=[
-  url('^$',views.index,name = 'index'),
-  url('^today/$', views.images_of_day,name='imagesToday')
+  url(r'^$',views.index,name = 'index'),
+  url(r'^about/', views.about,name= 'about'),
+  url(r'^search/',views.search_results, name='search_results')
   
 ]
